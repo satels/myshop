@@ -9,3 +9,4 @@ env/
 *.swn
 local.yml
 local.example.yml
+devenv.yml

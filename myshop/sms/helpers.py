@@ -1,5 +1,8 @@
 from contracts import contract
 from requests.exceptions import RequestException, HTTPError
+import select
+import ssl
+import socket
 import sys
 import requests
 

@@ -1,6 +1,6 @@
 from contracts import contract
 from sms.helpers import post_json, ExternalError
-from sms.base import BaseSMSHandler, SMSHandlerError
+from sms.handlers.base import BaseSMSHandler, SMSHandlerError
 
 
 class SMSHandler(BaseSMSHandler):

@@ -13,7 +13,7 @@ def get_handler(path, conf=None):
     try:
         mod_name, klass_name = path.rsplit('.', 1)
         mod = importlib.import_module(mod_name)
-    except AttributeError as e:
+    except (ImportError, AttributeError) as e:
         raise NotImplementedError(
                 'Error importing sms handler module %s: "%s"' % (mod_name, e))
 
@@ -24,4 +24,4 @@ def get_handler(path, conf=None):
                 'Module "%s" does not define a "%s" '
                 'class' % (mod_name, klass_name))
 
-    return klass(conf=conf)
+    return klass(conf)

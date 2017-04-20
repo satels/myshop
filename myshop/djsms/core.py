@@ -36,5 +36,5 @@ def send_message(phone, message, fail_silently=False):
             raise e
         return False
     else:
-        logger.info('{}:{}'.format(handler_name, repr(res['data']))
+        logger.info('{}:{}'.format(handler_name, repr(res['data'])))
         return True

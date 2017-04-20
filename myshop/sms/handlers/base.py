@@ -30,7 +30,7 @@ class BaseSMSHandler(object):
     @contract
     def get_conf(self):
         '''
-        :type conf: dict|None
+        :rtype: dict
         '''
         if self.handler_name is None:
             raise NotImplementedError('Set handler name')
@@ -44,4 +44,4 @@ class BaseSMSHandler(object):
         return ret
 
     def send_message(self, phone, message):
-        raise NotImplementedError()
+        raise NotImplementedError('Please, make the impliment with specific sms handler')

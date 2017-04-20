@@ -1,3 +1,4 @@
+import dj_database_url
 import os
 import sys
 
@@ -42,6 +43,12 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+DATABASE_URL = get_env_param_str('DATABASE_URL', default_param_str='sqlite://:memory:')
+
+DATABASES = {}
+if DATABASE_URL:
+    DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 ROOT_URLCONF = 'urls'
 

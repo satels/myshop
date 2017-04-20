@@ -1,6 +1,6 @@
 from contracts import contract
 from sms.helpers import post_json, ExternalError
-from sms.base import BaseSMSHandler, SMSHandlerError
+from sms.handlers.base import BaseSMSHandler, SMSHandlerError
 
 
 class SMSHandler(BaseSMSHandler):
@@ -15,6 +15,9 @@ class SMSHandler(BaseSMSHandler):
         :rtype: dict
         '''
         conf = self.get_conf()
+
+        if 'username' not in conf or 'password' not in conf:
+            raise SMSHandlerError('Specify username and password')
 
         try:
             res_data = post_json(conf['url'], {
