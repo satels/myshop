@@ -18,7 +18,9 @@ SECRET_KEY = 'x(i8w9-a^ms56)%^y%37$5l8^&3542oc67uf8fvam&9+^entt3'
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+]
 
 
 # Application definition
