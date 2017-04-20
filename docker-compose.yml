@@ -15,3 +15,11 @@ runserver:
     - 8020:8020
   image: myshop
   command: python3 ./myshop/manage.py runserver 0.0.0.0:8020 --traceback
+
+
+runtests:
+  extends:
+    file: local.yml  # cp from local.example.yml
+    service: local
+  image: myshop
+  command: /bin/bash ./jobs/unit_tests.sh

@@ -53,6 +53,10 @@ if DATABASE_URL:
 ROOT_URLCONF = 'urls'
 
 
+STATIC_ROOT = '/var/www/myshop/static/'
+STATIC_URL = '/static/'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
