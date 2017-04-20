@@ -10,8 +10,12 @@
 
 # Запуск сервера:
 
+    cp local.example.yml local.yml
+
     docker-compose up runserver
 
 # Запуск тестов:
+
+    cp local.example.yml local.yml
 
     docker-compose up runtests
