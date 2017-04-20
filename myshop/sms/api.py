@@ -1,10 +1,14 @@
+from contracts import contract
 import importlib
 
 
+@contract
 def get_handler(path, conf=None):
-    """
-    Doc
-    """
+    '''
+    :type path: str
+    :type conf: dict|None
+    :rtype: SMSHandler
+    '''
 
     try:
         mod_name, klass_name = path.rsplit('.', 1)

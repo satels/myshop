@@ -1,3 +1,4 @@
+from contracts import contract
 from requests.exceptions import RequestException, HTTPError
 import sys
 import requests
@@ -26,7 +27,14 @@ class ExternalError(Exception):
     pass
 
 
+@contract
 def post_json(url, data=None, timeout=60):
+    '''
+    :type url: str
+    :type data: dict|None
+    :type timeout: int
+    :rtype: dict
+    '''
 
     try:
         resp = requests.post(url, data=data, timeout=5)

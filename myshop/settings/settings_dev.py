@@ -1,3 +1,4 @@
+import sms_contracts
 
 
 SMS_SMSCRU_CONF = {

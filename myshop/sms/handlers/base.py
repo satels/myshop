@@ -1,3 +1,4 @@
+from contracts import contract
 from sms.conf import handler_confs
 
 
@@ -9,21 +10,27 @@ class BaseSMSHandler(object):
 
     handler_name = None
 
+    @contract
     def __init__(self, conf=None):
+        '''
+        :type conf: dict|None
+        '''
         self.conf = conf
 
+    @contract
     def update_conf(self, conf):
         '''
-        Doc
+        :type conf: dict|None
         '''
         if self.conf is None:
             self.conf = conf
         else:
             self.conf.update(conf)
 
+    @contract
     def get_conf(self):
         '''
-        Doc
+        :type conf: dict|None
         '''
         if self.handler_name is None:
             raise NotImplementedError('Set handler name')
@@ -37,7 +44,4 @@ class BaseSMSHandler(object):
         return ret
 
     def send_message(self, phone, message):
-        '''
-        Doc
-        '''
         raise NotImplementedError()

@@ -1,3 +1,4 @@
+from contracts import contract
 from sms.helpers import post_json, ExternalError
 from sms.base import BaseSMSHandler, SMSHandlerError
 
@@ -6,9 +7,12 @@ class SMSHandler(BaseSMSHandler):
 
     handler_name = 'smscru'
 
+    @contract
     def send_message(self, phone, message):
         '''
-        Doc
+        :type phone: str
+        :type message: str
+        :rtype: dict
         '''
         conf = self.get_conf()
 

@@ -1,3 +1,4 @@
+from contracts import contract
 from django.conf import settings
 from sms.api import get_handler
 from sms.handlers.base import SMSHandlerError
@@ -7,7 +8,13 @@ import logging
 logger = logging.getLogger('djsms.send_message')
 
 
+@contract
 def send_message(phone, message, fail_silently=False):
+    '''
+    :type phone: str
+    :type message: str
+    :rtype: bool
+    '''
     path = getattr(settings, 'SMS_HANDLER', 'sms.handlers.dummy.SMSHandler')
 
     handler = get_handler(path)
