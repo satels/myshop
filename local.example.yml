@@ -1,0 +1,6 @@
+local:
+  extends:
+    file: devenv.yml
+    service: devenv
+  volumes:
+    - ./myshop:/var/www/myshop

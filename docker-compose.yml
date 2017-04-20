@@ -1,0 +1,17 @@
+dev:
+  extends:
+    file: local.yml  # cp from local.example.yml
+    service: local
+  ports:
+    - 80:80
+  image: myshop
+
+
+runserver:
+  extends:
+    file: local.yml  # cp from local.example.yml
+    service: local
+  ports:
+    - 8020:8020
+  image: myshop
+  command: python3 ./myshop/manage.py runserver 0.0.0.0:8020 --traceback

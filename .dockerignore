@@ -1,0 +1,11 @@
+env/
+.coverage
+.DS_Store
+.git
+.idea
+*.ipynb
+*.swp
+*.swo
+*.swn
+local.yml
+local.example.yml

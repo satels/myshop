@@ -1,0 +1,4 @@
+devenv:
+  environment:
+    SECRET_KEY: "test"
+    SERVER_ROLE: dev
